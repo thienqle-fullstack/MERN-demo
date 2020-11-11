@@ -7,6 +7,8 @@ import reportWebVitals from './reportWebVitals';
 import EmployeeDetails from './employees/employee_details';
 import EmployeeList from './employees/employee_list';
 import About from './about';
+import "bootstrap/dist/css/bootstrap.css";
+
 
 ReactDOM.render(
   // <React.StrictMode>
@@ -14,16 +16,18 @@ ReactDOM.render(
   // </React.StrictMode>,
   (<Router>
     <div>
-      <h2>Welcome to React Demo!</h2>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <ul className="navbar-nav mr-auto">
-        <li><Link to={'/employees'} className="nav-link">Employee List</Link></li>      
-        <li><Link to={'/about'} className="nav-link">About</Link></li>
-      </ul>
+      <nav className="navbar navbar-expand-lg bg-primary">
+        <h3 style={{color:"white"}}>MERN-Demo!</h3> 
+        <span style={{width:"60%"}}></span>
+        <ul className="navbar-nav mr-auto">
+          <li><Link style={{color:"white"}} to={'/employees'} className="nav-link">Employees</Link></li>      
+          <li><Link style={{color:"white"}} to={'/about'} className="nav-link">About</Link></li>
+        </ul>
       </nav>
-      <hr />
+      <br/>
       <Switch>
           <Route path='/employees' component={EmployeeList} />
+          <Route path='/employee/:id' component={EmployeeDetails} />
           <Route path='/about' component={About} />
       </Switch>
     </div>
